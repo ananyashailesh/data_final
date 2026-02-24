@@ -4,8 +4,8 @@ Clean and organize Shopbop jewelry data
 import csv
 import re
 
-INPUT_FILE = "jewellery_shopbop.csv"
-OUTPUT_FILE = "jewellery_shopbop_cleaned.csv"
+INPUT_FILE = "C:\\Users\\rita2\\OneDrive - Erasmus University Rotterdam\\Desktop\\Data_Scraper\\bag_shopbop.csv"
+OUTPUT_FILE = "bag_shopbop_cleaned.csv"
 
 OUTPUT_HEADERS = [
     "Product page URL",
@@ -72,7 +72,12 @@ def clean_row(row):
         "Original price": original_price,
         "Sale price": sale_price if sale_price != original_price else "",
         "Product image URL": get_first_image(row.get('image', '') or row.get('image_2', '')),
-        "Size availability": row.get('product_size', '') or row.get('product_sizes', '')
+        "Size availability": row.get('product_size', '') or row.get('product_sizes', ''),
+        # Ensure all fields are present, even if missing in the input file
+        "Product det": row.get('Product det', ''),
+        "Color": row.get('Color', ''),
+        "Original price": row.get('Original price', ''),
+        "Sale price": row.get('Sale price', ''),
     }
 
 def main():
