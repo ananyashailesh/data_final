@@ -19,7 +19,7 @@ OUTPUT_HEADERS = [
     "Product image URL",
     "Size availability"
 ]
-
+#
 # Resellers - not actual brands
 RESELLERS = ["What Goes Around Comes Around", "Shopbop Archive"]
 
